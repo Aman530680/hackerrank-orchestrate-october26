@@ -138,10 +138,13 @@ class DeletionAuditEngine:
                 if uid:
                     self.catalog_links[res_id] = uid
 
-        # Load parsed evidence index
-        parsed_path = os.path.join(self.dataset_dir, 'parsed_evidence.pkl')
-        if os.path.exists(parsed_path):
-            self.df_parsed = pd.read_pickle(parsed_path)
+        # Load parsed evidence index (prefer JSON to avoid pickle/pyarrow dependency)
+        json_path = os.path.join(self.dataset_dir, 'parsed_evidence.json')
+        pkl_path = os.path.join(self.dataset_dir, 'parsed_evidence.pkl')
+        if os.path.exists(json_path):
+            self.df_parsed = pd.read_json(json_path)
+        elif os.path.exists(pkl_path):
+            self.df_parsed = pd.read_pickle(pkl_path)
         else:
             self.df_parsed = pd.DataFrame()
 
