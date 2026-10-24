@@ -82,3 +82,23 @@ branch=main
 repo_root=D:\Sem 5\Orchestrate\hackerrank-orchestrate-october26-main
 worktree=main
 parent_agent=none
+
+## 2026-10-24T21:05:40+05:30 Execution and Run Instructions Guide
+
+User Prompt (verbatim, secrets redacted):
+How to RUn the Proejct
+
+Agent Response Summary:
+Provided clear, step-by-step instructions on setting up the environment, executing the main audit engine, running the evaluation suites, and validating output.csv. Included terminal commands for both sample benchmarks and the full 518-case dataset.
+
+Actions:
+* Appended turn entry to log.txt per AGENTS.md requirements
+* Provided execution commands for code/main.py, evaluate_samples.py, and test_custom_cases.py
+
+Context:
+tool=antigravity-ide
+model=gemini-3.8-flash-n
+branch=main
+repo_root=D:\Sem 5\Orchestrate\hackerrank-orchestrate-october26-main
+worktree=main
+parent_agent=none
